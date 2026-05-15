@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>
+      Cart Quantity
+    </title>
+  </head>
+
+  <body>
+    <button onclick="
+      console.log(`Cart Quantity: ${CartQuantity}`);
+      ">
+      Show Quantity</button>
+
+    <button onclick="
+    CartQuantity = CartQuantity + 1
+    console.log(`Cart Quantity: ${CartQuantity}`);
+    ">
+    Add to Cart</button>
+
+    <button onclick="
+    CartQuantity ++ // this is a shorthand for CartQuantity = CartQuantity + 1
+    console.log(`Cart Quantity: ${CartQuantity}`);
+    ">
+    +1</button>
+
+    <button onclick="
+    CartQuantity = CartQuantity + 2
+    console.log(`Cart Quantity: ${CartQuantity}`);">
+    +2</button>
+    
+    <button onclick="
+    CartQuantity = CartQuantity + 3;
+    console.log(`Cart Quantity: ${CartQuantity}`);
+    ">
+    +3</button>
+
+    <button onclick="
+    CartQuantity += 4 // this is a shorthand for CartQuantity = CartQuantity + 4
+    console.log(`Cart Quantity: ${CartQuantity}`);
+    ">
+    +4</button>
+
+    <button onclick="
+    CartQuantity -- // this is a shorthand for CartQuantity = CartQuantity - 1
+    console.log(`Cart Quantity: ${CartQuantity}`);
+    ">
+    -1</button>
+
+    <button onclick="
+    CartQuantity = 0;
+    console.log(`Cart Quantity: 0`);
+    console.log(`Cart was Reset`);
+    ">
+    Reset Cart</button>
+
+    <script>
+      let CartQuantity = 0; // a variable that holds the initial quantity of the cart // this is PascalCase, which is a naming convention for variables in JavaScript
+    </script>
+  </body>
+</html>
