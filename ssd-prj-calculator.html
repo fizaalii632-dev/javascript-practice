@@ -109,10 +109,10 @@
       </button>
 
       <button onclick="
-      calculation = calculation + ' . '
+      calculation = calculation + '.'
       console.log(calculation);
       ">
-      .
+        .
       </button>
 
       <button onclick="
@@ -125,6 +125,7 @@
       <button onclick="
       calculation = eval(calculation) // this is a built-in function that evaluates a string as a mathematical expression
       console.log(calculation);
+      alert(`Result: ${calculation}`);
       ">
         =
       </button>
@@ -135,6 +136,7 @@
       <button onclick="
       calculation = ''
       console.log(calculation);
+      alert('Cleared');
       ">
         Clear
       </button> 
@@ -143,7 +145,7 @@
   </body>
 
   <script>
-    let calculation = ""; // a variable that holds the current calculation
+    let calculation = ''; // a variable that holds the current calculation
   </script>
 
 </html>

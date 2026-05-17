@@ -6,6 +6,8 @@
     </title>
   </head>
 
+// Practicing Variables
+
   <body>
     <button onclick="
       console.log(`Cart Quantity: ${CartQuantity}`);
@@ -56,6 +58,41 @@
 
     <script>
       let CartQuantity = 0; // a variable that holds the initial quantity of the cart // this is PascalCase, which is a naming convention for variables in JavaScript
+
+// practicing bollean
+
+      true
+      console.log(5 > 9);
+      console.log(5 < 9);
+
+      console.log(6 == '6.00'); // this will return true because == is a loose equality operator that does type coercion, it converts the string '6.00' to a number 6 before comparing it with the number 6
+
+      console.log(6 === '6.00'); // this will return false because === is a strict equality operator that does not do type coercion, it compares the value and the type of the operands, in this case, the number 6 and the string '6.00' are not the same type, so it returns false
+
+      console.log(6 !== '6.00'); // this will return true because !== is a strict inequality operator that does not do type coercion, it compares the value and the type of the operands, in this case, the number 6 and the string '6.00' are not the same type, so it returns true)
+
+// Practicing Logical Operators
+
+      console.log(5 > 9 || 9 > 5); // "||"" is a logical "OR" operator that returns true if at least one of the sides is true, in this case, 9 > 5 is true, so it returns true
+
+      console.log(5 > 9 && 9 > 5); // "&&" is a logical "AND" operator that returns true only if both sides are true, in this case, 5 > 9 is false, so it returns false
+
+      console.log(!(5 > 9)); // "!" is a logical "NOT" operator that returns the opposite of the value, in this case, 5 > 9 is false, so it returns true
+
+      console.log(typeof true); // this will print the type of the value true, which is boolean
+
+// Practicing if else statements
+
+      if (14 > 16) {
+        console.log('You are an Adult');}
+        else if (14 > 12) {
+          console.log('You are a Teenager');
+        }
+        else { 
+          console.log('You are a Child');
+        } // this is an if else statement that checks the age of a person and prints a message based on the age, in this case, 14 is greater than 12 but less than 16, so it will print 'You are a Teenager'
+
+      
     </script>
   </body>
 </html>
