@@ -130,7 +130,31 @@
         // a OR operator
         // || returns first truthy value
         // if left side is falsy, it returns right side
-        // so it can be used to set default values.      
+        // so it can be used to set default values. 
+        
+// Objects
+
+        const product = {
+          socks: 2,
+          price: 20
+        };
+
+        console.log(product);
+        console.log(product.price);
+        // separate the property in an object
+        
+
+        product.socks = 5;
+        // changes the value of property
+        console.log(product);
+
+        product.newProperty = 'shoes';
+        // Adds the new property
+        console.log(product);
+
+        delete product.price;
+        // deletes the new property
+        console.log(product);
     </script>
   </body>
 </html>

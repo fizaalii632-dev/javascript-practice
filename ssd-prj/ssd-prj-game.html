@@ -27,10 +27,26 @@
          playGame('Scissors');
       
       ">Scissors</button>
+
+      <button onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      alert('Score Reset');
+      ">
+      Reset
+      </button>
     </p>
   </body>
 
   <script>
+    const score = 
+    {
+      wins: 0,
+      losses: 0,
+      ties: 0,
+    };
+
     function playGame(playerMove) 
     {
        const computerMove = pickComputerMove();
@@ -59,8 +75,12 @@
           else if (computerMove === 'Scissors') {result = 'You Win'}
       }
 
-      alert(`You Picked ${playerMove}, Computer Pciked ${computerMove}, ${result}`);
+      if (result === 'You Win')  {score.wins += 1}
+      else if (result === 'You Lose') {score.losses += 1}
+      else if (result === 'Tie') {score.ties += 1};
 
+      alert(`You Picked ${playerMove}, Computer Pciked ${computerMove}, ${result}
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
     }
 
     function pickComputerMove() 
