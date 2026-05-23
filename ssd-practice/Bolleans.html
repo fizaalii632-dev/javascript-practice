@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        Bolleans
+      </title>
+    </head>
+
+    <body>
+      <script>
+        console.log(true);
+        console.log(5 > 9);
+        console.log(5 < 9);
+
+        console.log(6 == '6.00');
+
+        // == is a loose equality operator
+        // compares only values
+        // have same value → true even if different types.
+
+        console.log(6 === '6.00');
+        // === is a strict equality operator
+        // checks value + type
+        // number !== string → false
+        
+
+        console.log(6 !== '6.00'); 
+        // !== is a strict inequality operator
+        // gives true if values are not equal.
+
+// Practicing Logical Operators
+
+      console.log(5 > 9 || 9 > 5);
+      // "OR" operator
+      // || = one side must be true
+      // one true → true
+
+      console.log(5 > 9 && 9 > 5);
+      // "and" operator
+      // && = both sides must be true
+      // one false → false
+
+      console.log(!(5 > 9));
+      // a"NOT" operator
+      // false becomes true
+
+      console.log(typeof true);
+      // typeof = checks data type
+      // true → boolean
+
+// Practicing if else statements
+
+      if (14 > 16) {
+        console.log('You are an Adult');}
+        else if (14 > 12) {
+          console.log('You are a Teenager');
+        }
+        else { 
+          console.log('You are a Child');
+        }
+        // this is an if else statement.
+
+// shortcuts
+
+        const result = 0 ? 'True' : 'False'; 
+        // a ternary operator - shorthand for an if else statement,
+        // if condition is true → take value after ?
+        // else → take value after :
+
+        const message = true && 'Hello';
+        // a guard operator
+        // && returns next value if left side is true,
+        // && returns left side if left side is false.
+
+        const currency = 'undefined' || 'USD';
+        // a OR operator
+        // || returns first truthy value
+        // if left side is falsy, it returns right side
+        // so it can be used to set default values. 
+        
+      </script>
+    </body>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        Objects
+      </title>
+    </head>
+
+    <body>
+      <script>
+         const product = {
+          socks: 2,
+          price: 20
+        };
+
+        console.log(product);
+        console.log(product.price);
+        // separate the property in an object
+        
+
+        product.socks = 5;
+        // changes the value of property
+        console.log(product);
+
+        product.newProperty = 'shoes';
+        // Adds the new property
+        console.log(product);
+
+        delete product.price;
+        // deletes the new property
+        console.log(product);
+
+        console.log('hello'.length);
+        // length is a property of string - gives the no: of characters in the string
+        // this is called Auto-boxing
+
+        const object1 = {
+          praise: 'nice',
+          length: 4
+        }
+
+        //const praise = object1.praise;
+        // below is shorthand for above line of code
+        const { praise } = object1;
+        // this is called destructuring.
+        console.log(praise);
+        
+      const object2 = {
+       // method: function function1() {
+       // console.log('method');
+       //}
+        method() {
+          console.log('method');
+        }
+        // this is a shorthand for the above method in an object.
+      };
+
+      object2.method();
+    </script>
