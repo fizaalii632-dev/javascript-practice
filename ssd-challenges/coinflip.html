@@ -1,0 +1,68 @@
+<!DOCTYOE html>
+<html>
+  <head>
+    <title>Coin Flip Challenge</title>
+  </head>
+
+  <body>
+    <p>Flip the Coin</p>
+
+    <p>
+      <button onclick="playerMove = 'Heads'">
+        Heads
+      </button>
+
+      <button onclick="playerMove = 'Tails'">
+        Tails
+      </button>
+    </p>
+
+    <p>
+    <button onclick="
+      pickComputerMove();
+       alert(`computer flipped ${computerMove}. ${result}`);
+      ">Flip Coin</button>
+
+      <button onclick="
+      resetGame();
+      ">Reset</button>
+    </p>
+
+    <p class="js-result"></p>
+  </body>
+
+  <script>
+    let playerMove = '';
+
+    function pickComputerMove() {
+      randomNumber = Math.random();
+
+      let computerMove = '';
+      
+      let result = '';
+
+      if (randomNumber < 0.5) {
+        computerMove = 'Heads';
+      } else if (randomNumber > 0.5) {
+        computerMove = 'Tails';
+      }
+
+     
+      if (playerMove === computerMove) {
+        result = 'You win!';
+      } else if (playerMove !== computerMove) {
+        result = 'You lose!';
+      }
+
+      document.querySelector('.js-result').innerText = `Coin Flip: ${computerMove}
+You picked: ${playerMove}
+${result}`;
+    }
+
+    function resetGame() {
+      document.querySelector('.js-result').innerText = '';
+        
+    }
+  </script>
+
+</html>
