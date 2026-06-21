@@ -1,0 +1,25 @@
+<script>
+const array = [1,2,-5,3];
+
+function minMax (array) {
+  let min = array[0];
+  let max = array[0];
+  
+  for (let i = 0; i < array.length; i++) {
+      const num = array[i];
+      
+      if (num < min) {
+      min = num
+      }
+      if (num > max) { 
+      max = num}
+  }
+  
+    return {
+    min: min,
+    max: max
+    };
+}
+console.log(minMax([1,2,-5,3]));
+</script>
+
