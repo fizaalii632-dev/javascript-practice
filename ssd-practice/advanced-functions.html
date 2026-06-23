@@ -1,0 +1,61 @@
+  <!DOCTYPE html>
+  <html>
+      <head>
+          <title>Advanced Function</title>
+      </head>
+      <body>
+          <script>
+            /*
+            function greeting () {
+              console.log('hello1');
+            }
+            greeting();
+            
+//functions are values, can be used as value.            
+            const num = 2;
+            const function1 = function() {
+              console.log('hello2');
+            }
+            console.log(function1);
+            console.log(typeof function1);
+            
+//Method - function saved inside an object.             
+            const object1 = {
+              num: 2,
+              fun: function() {
+                console.log('hello3')
+              }
+            };
+            object1.fun();
+            
+// we can pass a value into a function.            
+            function display (param) {
+              console.log(param);
+            }
+            display(2);
+            
+// as functions are value, we can pass function into a function.
+
+            function run (param) {
+             param();//now param contains a function so we can just call it! 
+            }
+            run(function () {
+              console.log('hello4');
+            }); // called a callback function.
+            */
+            
+// setTimeout is inbuilt function, conatins 2 propeties, 2nd is sec after which the first param runs.
+
+          setTimeout(function() {
+            console.log('timeout');
+            }, 3000);
+            
+            console.log('next line');
+
+//seInterval is same as above but it just doesnt stop.
+           setInterval(function() {
+             console.log('interval');
+           }, 3000);
+          </script>
+      </body>
+  </html>

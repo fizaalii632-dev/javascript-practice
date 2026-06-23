@@ -1,0 +1,23 @@
+<html>
+  <body>
+    <script>
+      const fbLoop = [];
+      
+      for (let i = 1; i <= 20; i++) {
+        
+        if (i % 3 === 0 && i % 5 === 0) {
+          fbLoop.push("fizzbuzz");
+        }
+          else if (i % 3 === 0) {
+            fbLoop.push("fizz");
+          }
+          else if (i % 5 === 0) {
+            fbLoop.push("buzz");
+          }
+          else { fbLoop.push(i);
+          }
+      }    
+      console.log(fbLoop);
+    </script>
+  </body>
+</html>
