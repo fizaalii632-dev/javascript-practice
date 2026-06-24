@@ -16,6 +16,30 @@ const score =
       }
     };
     */
+    
+    let isAutoPlaying = false;
+    let intervalId;
+    
+    function autoPlay() {
+      const button = document.querySelector('.auto-play-button');
+      
+      if (!isAutoPlaying) {
+        intervalId = setInterval(function() {
+          const playerMove = pickComputerMove();
+          playGame(playerMove);
+        }, 1000);
+        isAutoPlaying = true;
+        button.textContent = "Stop Auto Play";
+        button.style.backgroundColor = "red";
+      
+      } else {
+        clearInterval(intervalId);
+        isAutoPlaying = false;
+        button.textContent = "Auto Play";
+        button.style.backgroundColor = "";
+      }
+    }
+    
     function playGame(playerMove) 
     {
        const computerMove = pickComputerMove();

@@ -42,7 +42,7 @@
             run(function () {
               console.log('hello4');
             }); // called a callback function.
-            */
+            
             
 // setTimeout is inbuilt function, conatins 2 propeties, 2nd is sec after which the first param runs.
 
@@ -56,6 +56,21 @@
            setInterval(function() {
              console.log('interval');
            }, 3000);
+           */
+           
+//.forEach is another way to loop through an array.           
+           
+           ['make dinner',
+           'watch youtube',
+           'do coding',
+             ].forEach(function(value, index) {
+               if (value === 'watch youtube') {
+                 return; // skips the value and continue the string.
+               }
+               console.log(index);
+               console.log(value);
+             })
+           
           </script>
       </body>
   </html>
