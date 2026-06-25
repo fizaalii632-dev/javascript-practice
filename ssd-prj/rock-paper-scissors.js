@@ -16,6 +16,16 @@ const score =
       }
     };
     */
+    document.body.addEventListener('keydown', (event) => {
+      if (event.key === 'r') {
+        playGame('Rock');
+      } else if (event.key === 'p') {
+        playGame('Paper');
+      }  else if (event.key === 's') {
+          playGame('Scissors');
+        }
+    });
+    
     function playGame(playerMove) 
     {
        const computerMove = pickComputerMove();
@@ -66,7 +76,7 @@ const score =
 
     function pickComputerMove() 
     {
-      randomNumber = Math.random()
+      const randomNumber = Math.random()
 
       let computerMove = '';
 

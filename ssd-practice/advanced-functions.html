@@ -4,7 +4,20 @@
           <title>Advanced Function</title>
       </head>
       <body>
+        <button class="js-button">Click</button>
           <script>
+          // const buttonElement = document.querySelector('.js-button');
+          
+// addEvenetListener is method, contains 2 properties, 1st is event the other is action.
+/*
+            const eventListener = () => {
+              console.log('hello');
+            }
+            buttonElement.addEventListener('click', eventListener);
+            
+// we can also remove this!
+            buttonElement.removeEventListener('click', eventListener);
+  */          
             /*
             function greeting () {
               console.log('hello1');
@@ -59,18 +72,69 @@
            */
            
 //.forEach is another way to loop through an array.           
-           
+           /*
            ['make dinner',
            'watch youtube',
            'do coding',
-             ].forEach(function(value, index) {
+             ].forEach((value, index) => {
                if (value === 'watch youtube') {
                  return; // skips the value and continue the string.
                }
                console.log(index);
                console.log(value);
              })
+             
+// arrowFunctionis same as function but with changes.             
+             const regularFunction = function () {
+               console.log('hello');
+             };
+             regularFunction();
+
+             const arrowFunction = () => {
+                console.log('hello'); 
+               };
+             arrowFunction();
+               
+    // if there's 1 param, we can actually remove ().
+             const oneParam = param => {
+               console.log(param);
+             };
+             oneParam(4);
+             
+    // if there's one line code, we can actually remove {}.         
+             const oneLine = () => 2 + 3;
+             console.log(oneLine());
+             
+    // arrow functions can be used in object but its own built in shorthand function recommended.         
+             const object1 = {
+               method1: () => {
+                 console.log('hello');
+               },
+               method2() {
+                 console.log('world');
+               }
+             }
+             
+             object1.method1();
+             object1.method2();
+           */
            
+           console.log([1, -3, 5].filter((value, index) => {
+            /* if (value >= 0) {
+               return true;
+             } else {
+               return false; 
+             }
+             */
+             return value >= 0;
+             // this does the same as above commented out code.
+           }));
+    
+// .map helps returns a new array.     
+           
+           console.log([1, 1, 3].map((value, index) => {
+             return value * 2;
+           }));
           </script>
       </body>
   </html>
