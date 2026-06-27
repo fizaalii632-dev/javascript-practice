@@ -1,4 +1,4 @@
-const products = [
+export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",
@@ -629,7 +629,7 @@ const products = [
   {
     id: "aaa65ef3-8d6f-4eb3-bc9b-a6ea49047d8f",
     image: "images/products/kitchen-paper-towels-30-pack.jpg",
-    name: "2-Ply Kitchen Paper Towels - 30 Pack",
+    name: "2-Ply Kitchen Paper Towels - 30 Packs",
     rating: {
       stars: 4.5,
       count: 1045
