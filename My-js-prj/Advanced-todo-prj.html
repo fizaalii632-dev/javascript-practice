@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Advanced Todo Project
+    </title>
+    <style>
+      .input-element {
+        padding: 7px;
+        font-family: Arial;
+        font-style: italic;
+        font-size: 14px;
+      }
+      
+      .style-add-button {
+        border: none;
+        color: white;
+        background-color: #243bec;
+        padding: 7px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        font-family: Arial;
+        text-align: center;
+      }
+      
+      .date-element {
+        padding: 7px;
+      }
+      
+      .style-delete-button {
+        border: none;
+        background-color: red;
+        border-radius: 5px;
+        color: white;
+        font-family: Arial;
+        font-size: 14px;
+        padding: 7px 10px;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Schedule Your Day
+    </p>
+    <div>
+      <input class="input-element js-input-element" placeholder="What's for today">
+      <input class="date-element js-date-element" type="date">
+      <button onclick="addTodo();" class="style-add-button js-add-button">Add</button>
+    </div>
+    
+    <div class="js-html-element">
+    </div>
+    
+    <script>
+      const todoSet = [];
+      
+      function addTodo() {
+          const inputElement = document.querySelector('.js-input-element');
+          const name = inputElement.value;
+          
+          const dateInputElement = document.querySelector('.js-date-element');
+          const dueDate = dateInputElement.value;
+          
+          todoSet.push({
+            ///name: name,
+            //dueDate: dueDate,
+            name,
+            dueDate
+            });
+          
+          let todoListHTML = '';
+          todoSet.forEach((todo) => {
+            const html = `
+              <div>${name}</div>
+              <div>${dueDate}</div>
+              <button class="style-delete-button, js-delete-button">Delete</button>
+            `;
+            
+            todoListHTML += html;
+            document.querySelector('.js-html-element')
+                .innerHTML = todoListHTML;
+          });
+          
+          
+          inputElement.value = '';
+          dateInputElement.value = '';
+          
+          
+          
+            
+              document.querySelectorAll('.js-delete-button')
+                .forEach((deleteButton, index) => {
+                  deleteButton.addEventListener('click', () => {
+                    todoSet.splice(index, 1);
+                  });
+                });
+        
+      }
+      
+      
+    </script>
+  </body>
+</html>
