@@ -5,56 +5,145 @@
       Advanced Todo Project
     </title>
     <style>
-      .input-element {
-        padding: 7px;
-        font-family: Arial;
-        font-style: italic;
-        font-size: 14px;
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f7fb;
+        margin: 0;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 750px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      p {
+        margin: 0 0 25px;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        color: #2d3e8b;
+      }
+      
+      .todo-input-grid,
+      .todo-render-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 110px;
+        gap: 15px;
+        align-items: center;
+      }
+      
+      .todo-render-grid {
+        margin-top: 20px;
+      }
+      
+      .input-element,
+      .date-element {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px;
+        font-size: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+      }
+      
+      .input-element:focus,
+      .date-element:focus {
+        border-color: #3f51b5;
+      }
+      
+      .style-add-button,
+      .style-delete-button {
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.2s;
       }
       
       .style-add-button {
-        border: none;
-        color: white;
-        background-color: #243bec;
-        padding: 7px 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 14px;
-        font-family: Arial;
-        text-align: center;
+        background-color: #3f51b5;
       }
       
-      .date-element {
-        padding: 7px;
+      .style-add-button:hover {
+        background-color: #32408f;
       }
       
       .style-delete-button {
-        border: none;
-        background-color: red;
-        border-radius: 5px;
-        color: white;
-        font-family: Arial;
+        background-color: #e53935;
+      }
+      
+      .style-delete-button:hover {
+        background-color: #c62828;
+      }
+      
+      .todo-card {
+        background-color: #f8f9fc;
+        padding: 12px;
+        border-radius: 8px;
+        border-left: 4px solid #3f51b5;
+        word-break: break-word;
+      }
+      
+      .todo-render-grid > div:nth-child(3n+2) {
+        text-align: center;
+        color: #666;
         font-size: 14px;
-        padding: 7px 10px;
-        
       }
     </style>
   </head>
   <body>
-    <p>
-      Schedule Your Day
-    </p>
-    <div>
-      <input class="input-element js-input-element" placeholder="What's for today">
-      <input class="date-element js-date-element" type="date">
-      <button onclick="addTodo();" class="style-add-button js-add-button">Add</button>
-    </div>
-    
-    <div class="js-html-element">
+    <div class="container">
+      <p>
+        Schedule Your Day
+      </p>
+      <div class="todo-input-grid">
+        <input class="input-element js-input-element" placeholder="What's for today">
+        <input class="date-element js-date-element" type="date">
+        <button onclick="
+            addTodo();
+          " class="style-add-button js-add-button">Add</button>
+      </div>
+      
+      <div class="js-html-element todo-render-grid">
+      </div>
     </div>
     
     <script>
       const todoSet = [];
+      
+      
+      function renderTodoList() { 
+        let todoListHTML = '';
+        todoSet.forEach((todo, index) => {
+          let html = 
+            `<div class="todo-card">${todo.name}</div>
+             <div> ${todo.dueDate}</div>
+             <button class="style-delete-button js-delete-button">Delete</button>`;
+            
+          
+            todoListHTML += html;
+            
+        });
+        
+        document.querySelector('.js-html-element')
+          .innerHTML = todoListHTML;
+        document.querySelectorAll('.js-delete-button')
+          .forEach((deleteButton, index) => {
+              deleteButton.addEventListener('click', () => {
+                 todoSet.splice(index, 1);
+                 renderTodoList();
+              });
+        });
+      }
+      
       
       function addTodo() {
           const inputElement = document.querySelector('.js-input-element');
@@ -63,43 +152,28 @@
           const dateInputElement = document.querySelector('.js-date-element');
           const dueDate = dateInputElement.value;
           
+          if (name === '') {
+            alert('please select a name');
+            return;
+          }
+          
+          if (dueDate === '') {
+            alert('please select a date');
+            return;
+          }
+          
           todoSet.push({
-            ///name: name,
-            //dueDate: dueDate,
-            name,
-            dueDate
-            });
-          
-          let todoListHTML = '';
-          todoSet.forEach((todo) => {
-            const html = `
-              <div>${name}</div>
-              <div>${dueDate}</div>
-              <button class="style-delete-button, js-delete-button">Delete</button>
-            `;
-            
-            todoListHTML += html;
-            document.querySelector('.js-html-element')
-                .innerHTML = todoListHTML;
+              ///name: name,
+              //dueDate: dueDate,
+              name,
+              dueDate
           });
-          
           
           inputElement.value = '';
           dateInputElement.value = '';
-          
-          
-          
             
-              document.querySelectorAll('.js-delete-button')
-                .forEach((deleteButton, index) => {
-                  deleteButton.addEventListener('click', () => {
-                    todoSet.splice(index, 1);
-                  });
-                });
-        
+          renderTodoList();  
       }
-      
-      
     </script>
   </body>
 </html>
